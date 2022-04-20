@@ -11,8 +11,14 @@
       >
         <h1>{{ mainTitle }}</h1>
         <div>
-          <input class="me-3" type="text" />
-          <button type="button" class="btn btn-primary btn-sm">Cerca!</button>
+          <input class="me-3" type="text" v-model="inputText" />
+          <button
+            @click="searchInput"
+            type="button"
+            class="btn btn-primary btn-sm"
+          >
+            Cerca!
+          </button>
         </div>
       </div>
     </div>
@@ -25,7 +31,13 @@ export default {
   data() {
     return {
       mainTitle: "Boolfix",
+      inputText: "",
     };
+  },
+  methods: {
+    searchInput() {
+      console.log(this.inputText);
+    },
   },
 };
 </script>

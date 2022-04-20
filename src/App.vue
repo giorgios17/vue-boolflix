@@ -15,6 +15,13 @@ export default {
     HeaderComponent,
     MainComponent,
   },
+  data() {
+    return {
+      apiKey: "e89cd5cd17f6ac31e79a5bc00de59c80",
+      apiUrl: "https://api.themoviedb.org/3/search/movie",
+    };
+  },
+  methods: {},
 };
 </script>
 

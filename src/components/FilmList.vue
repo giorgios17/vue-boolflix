@@ -1,11 +1,14 @@
 <template>
   <div class="film-container">
     <div class="border" v-for="(film, index) in filmList" :key="index">
-      <img :src="posterUrl() + film.poster_path" :alt="film.title" />
+      <img :src="imgUrl + film.poster_path" :alt="film.title" />
       <h4>Titolo: {{ film.title }}</h4>
       <p>Titolo originale: {{ film.original_title }}</p>
       <p class="text-uppercase">{{ film.original_language }}</p>
-      <p>Voto: {{ film.vote_average }}</p>
+      <p>
+        Voto: {{ voteToStar(film.vote_average)
+        }}<font-awesome-icon icon="fa-solid fa-star" />
+      </p>
     </div>
   </div>
 </template>
@@ -18,8 +21,12 @@ export default {
     imgUrl: String,
   },
   methods: {
-    posterUrl() {
-      return this.imgUrl + "w342/";
+    // posterUrl() {
+    //   return this.imgUrl + "w342/";
+    // },
+    voteToStar(n) {
+      const vote = Math.ceil(n / 2);
+      return vote;
     },
   },
 };

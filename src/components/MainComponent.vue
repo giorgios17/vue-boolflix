@@ -20,7 +20,7 @@ export default {
   },
   data() {
     return {
-      imgUrl: "https://image.tmdb.org/t/p/",
+      imgUrl: "https://image.tmdb.org/t/p/w342",
     };
   },
 };

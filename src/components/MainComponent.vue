@@ -1,7 +1,7 @@
 <template>
   <main>
-    <FilmList :filmList="filmList" />
-    <SeriesList :seriesList="seriesList" />
+    <FilmList :filmList="filmList" :imgUrl="imgUrl" />
+    <SeriesList :seriesList="seriesList" :imgUrl="imgUrl" />
   </main>
 </template>
 
@@ -18,13 +18,18 @@ export default {
     FilmList,
     SeriesList,
   },
+  data() {
+    return {
+      imgUrl: "https://image.tmdb.org/t/p/",
+    };
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 main {
   color: white;
-  background-color: gray;
+  background-color: rgb(64, 62, 62);
   padding: 30px;
 }
 </style>

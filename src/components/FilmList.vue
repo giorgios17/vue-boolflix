@@ -1,10 +1,11 @@
 <template>
   <div class="film-container">
     <div class="border" v-for="(film, index) in filmList" :key="index">
-      <h4>{{ film.title }}</h4>
-      <p>{{ film.original_title }}</p>
+      <img :src="posterUrl() + film.poster_path" :alt="film.title" />
+      <h4>Titolo: {{ film.title }}</h4>
+      <p>Titolo originale: {{ film.original_title }}</p>
       <p class="text-uppercase">{{ film.original_language }}</p>
-      <p>{{ film.vote_average }}</p>
+      <p>Voto: {{ film.vote_average }}</p>
     </div>
   </div>
 </template>
@@ -14,6 +15,12 @@ export default {
   name: "FilmList",
   props: {
     filmList: Array,
+    imgUrl: String,
+  },
+  methods: {
+    posterUrl() {
+      return this.imgUrl + "w342/";
+    },
   },
 };
 </script>

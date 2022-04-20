@@ -25,7 +25,7 @@ export default {
     };
   },
   methods: {
-    //CHIAMATA API
+    //CHIAMATA API MOVIE
     queryMovie(inputText) {
       const params = {
         query: inputText,
@@ -44,6 +44,7 @@ export default {
           console.log(error);
         });
     },
+    //CHIAMATA API TV
     queryTv(inputText) {
       const params = {
         query: inputText,

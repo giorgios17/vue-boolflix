@@ -11,9 +11,9 @@
       >
         <h1>{{ mainTitle }}</h1>
         <div>
-          <input class="me-3" type="text" v-model="inputText" />
+          <input class="me-3" type="text" v-model="textToSearch" />
           <button
-            @click="searchInput"
+            @click="$emit('search', textToSearch)"
             type="button"
             class="btn btn-primary btn-sm"
           >
@@ -31,19 +31,16 @@ export default {
   data() {
     return {
       mainTitle: "Boolfix",
-      inputText: "",
+      textToSearch: "",
     };
   },
-  methods: {
-    searchInput() {
-      console.log(this.inputText);
-    },
-  },
+  methods: {},
 };
 </script>
 
 <style lang="scss" scoped>
 h1 {
   color: red;
+  text-transform: uppercase;
 }
 </style>

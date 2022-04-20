@@ -34,7 +34,8 @@ export default {
       axios
         .get(this.apiUrl, { params })
         .then(({ data }) => {
-          console.log(data.results);
+          console.log(data);
+          this.films.push(data.results);
         })
         .catch((error) => {
           console.log(error);
@@ -44,6 +45,7 @@ export default {
     textToSearch(searchText) {
       if (searchText.length > 0) {
         this.queryApi(searchText);
+        console.log("films array", this.films);
       }
     },
   },

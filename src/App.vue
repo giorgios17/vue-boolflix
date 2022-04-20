@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <HeaderComponent @search="textToSearch" />
-    <MainComponent />
+    <MainComponent :filmList="films" />
   </div>
 </template>
 
@@ -35,7 +35,9 @@ export default {
         .get(this.apiUrl, { params })
         .then(({ data }) => {
           console.log(data);
-          this.films.push(data.results);
+          this.films = data.results;
+          console.log("films array", this.films);
+          return this.films;
         })
         .catch((error) => {
           console.log(error);
@@ -45,7 +47,6 @@ export default {
     textToSearch(searchText) {
       if (searchText.length > 0) {
         this.queryApi(searchText);
-        console.log("films array", this.films);
       }
     },
   },

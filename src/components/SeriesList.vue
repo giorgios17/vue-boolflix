@@ -9,11 +9,12 @@
           <p v-show="tv.name !== tv.original_name">
             {{ tv.original_name }}
           </p>
-          <p class="text-uppercase">{{ tv.original_language }}</p>
+          <country-flag :country="tv.original_language" size="small" />
           <p>
             {{ voteToStar(tv.vote_average) }}
             <font-awesome-icon icon="fa-solid fa-star" />
           </p>
+          <p><span class="fw-bold"> Overview:</span> {{ tv.overview }}</p>
         </div>
       </div>
     </div>
@@ -48,10 +49,20 @@ export default {
   .card-gs {
     width: 342px;
     height: 500px;
-    margin: 60px 0px;
+    margin: 60px 10px;
+    cursor: pointer;
+    position: relative;
+    background-color: black;
     img {
       width: 100%;
       height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5;
+      &:hover {
+        display: none;
+      }
     }
     h4 {
       font-size: 16px;

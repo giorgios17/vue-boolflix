@@ -37,10 +37,6 @@ export default {
       const vote = Math.ceil(n / 2);
       return vote;
     },
-    // GENERO LA BANDIERA DEL PAESE DINAMICAMENTE
-    getFlag(country) {
-      return `<country-flag country='${country}' size='small'/>`;
-    },
   },
   data() {
     return {

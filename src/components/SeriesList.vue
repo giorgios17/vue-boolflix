@@ -1,11 +1,16 @@
 <template>
-  <div class="tv-container">
-    <div class="border" v-for="(tv, index) in seriesList" :key="index">
-      <img :src="imgUrl + tv.poster_path" :alt="tv.name" />
-      <h4>{{ tv.name }}</h4>
-      <p>{{ tv.original_name }}</p>
-      <p class="text-uppercase">{{ tv.original_language }}</p>
-      <p>{{ voteToStar(tv.vote_average) }}</p>
+  <div>
+    <div class="container-fluid">
+      <h1 class="mt-5">Serie TV: {{ seriesList.length }}</h1>
+      <div class="tv-container">
+        <div v-for="(tv, index) in seriesList" :key="index">
+          <img :src="imgUrl + tv.poster_path" :alt="tv.name" />
+          <h4>{{ tv.name }}</h4>
+          <p>{{ tv.original_name }}</p>
+          <p class="text-uppercase">{{ tv.original_language }}</p>
+          <p>{{ voteToStar(tv.vote_average) }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>

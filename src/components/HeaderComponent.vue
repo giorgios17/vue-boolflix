@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="col-12 bg-dark">
+    <div class="col-12 bg-dark p-2">
       <div
         class="
           container-fluid
@@ -11,7 +11,12 @@
       >
         <h1>{{ mainTitle }}</h1>
         <div>
-          <input class="me-3" type="text" v-model="textToSearch" />
+          <input
+            class="me-3"
+            type="text"
+            v-model="textToSearch"
+            placeholder="Cerca film/serie Tv..."
+          />
           <button
             @click="$emit('search', textToSearch)"
             type="button"

@@ -29,7 +29,7 @@ export default {
 <style lang="scss" scoped>
 main {
   color: white;
-  background-color: rgb(64, 62, 62);
-  padding: 30px;
+  background-color: #141414;
+  padding: 30px 0px;
 }
 </style>

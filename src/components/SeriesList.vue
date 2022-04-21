@@ -1,14 +1,19 @@
 <template>
   <div>
-    <div class="container-fluid">
-      <h1 class="mt-5">Serie TV: {{ seriesList.length }}</h1>
+    <div class="container-fluid mt-5">
+      <h1>Serie TV: {{ seriesList.length }}</h1>
       <div class="tv-container">
-        <div v-for="(tv, index) in seriesList" :key="index">
+        <div class="card-gs" v-for="(tv, index) in seriesList" :key="index">
           <img :src="imgUrl + tv.poster_path" :alt="tv.name" />
           <h4>{{ tv.name }}</h4>
-          <p>{{ tv.original_name }}</p>
+          <p v-show="tv.name !== tv.original_name">
+            {{ tv.original_name }}
+          </p>
           <p class="text-uppercase">{{ tv.original_language }}</p>
-          <p>{{ voteToStar(tv.vote_average) }}</p>
+          <p>
+            {{ voteToStar(tv.vote_average) }}
+            <font-awesome-icon icon="fa-solid fa-star" />
+          </p>
         </div>
       </div>
     </div>
@@ -39,5 +44,22 @@ export default {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  font-size: 12px;
+  .card-gs {
+    width: 342px;
+    height: 500px;
+    margin: 60px 0px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    h4 {
+      font-size: 16px;
+      margin: 0;
+    }
+    p {
+      margin: 0;
+    }
+  }
 }
 </style>

@@ -28,9 +28,7 @@ export default {
     imgUrl: String,
   },
   methods: {
-    // posterUrl() {
-    //   return this.imgUrl + "w342/";
-    // },
+    // TRASFORMO VOTO DECIMALE (DA 1 A 10) IN VOTO DA 1 A 5
     voteToStar(n) {
       const vote = Math.ceil(n / 2);
       return vote;
@@ -49,13 +47,22 @@ export default {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  font-size: 12px;
+
   .card-gs {
     width: 342px;
     height: 500px;
-    margin: 30px 0px;
+    margin: 60px 0px;
     img {
       width: 100%;
       height: 100%;
+    }
+    p {
+      margin: 0;
+    }
+    h4 {
+      font-size: 16px;
+      margin: 0;
     }
   }
 }

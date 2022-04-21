@@ -28,8 +28,6 @@ export default {
 
 <style lang="scss" scoped>
 main {
-  color: white;
-  background-color: #141414;
   padding: 30px 0px;
 }
 </style>

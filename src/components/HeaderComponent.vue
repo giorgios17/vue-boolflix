@@ -22,7 +22,7 @@
             type="button"
             class="btn btn-primary btn-sm"
           >
-            Cerca!
+            Cerca
           </button>
         </div>
       </div>
@@ -39,7 +39,6 @@ export default {
       textToSearch: "",
     };
   },
-  methods: {},
 };
 </script>
 

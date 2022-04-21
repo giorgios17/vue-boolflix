@@ -78,10 +78,14 @@ export default {
 @import "@/assets/style/reset";
 @import "~bootstrap";
 @import "@/assets/style/variables";
+body {
+  background-color: #141414;
+  height: 100vh;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  color: white;
 }
 </style>

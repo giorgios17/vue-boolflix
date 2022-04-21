@@ -9,10 +9,19 @@
           align-items-center
         "
       >
-        <h1>{{ mainTitle }}</h1>
+        <div class="d-flex">
+          <h1>{{ mainTitle }}</h1>
+          <ul class="d-flex align-items-center gap-3">
+            <li v-for="navitem in navMenu" :key="navitem">
+              <a href="#">{{ navitem }}</a>
+            </li>
+          </ul>
+        </div>
+
         <div>
+          <font-awesome-icon icon="fas fa-search" />
           <input
-            class="me-3"
+            class="mx-3"
             type="text"
             v-model="textToSearch"
             placeholder="Cerca film/serie Tv..."
@@ -20,10 +29,11 @@
           <button
             @click="$emit('search', textToSearch)"
             type="button"
-            class="btn btn-primary btn-sm"
+            class="btn btn-primary btn-sm me-3"
           >
             Cerca
           </button>
+          <font-awesome-icon icon="fas fa-bell" />
         </div>
       </div>
     </div>
@@ -37,6 +47,14 @@ export default {
     return {
       mainTitle: "Boolfix",
       textToSearch: "",
+      navMenu: [
+        "Home",
+        "Serie TV",
+        "Film",
+        "Originali",
+        "Aggiunti di recente",
+        "La mia lista",
+      ],
     };
   },
 };
@@ -46,5 +64,9 @@ export default {
 h1 {
   color: red;
   text-transform: uppercase;
+}
+a {
+  text-decoration: none;
+  color: white;
 }
 </style>

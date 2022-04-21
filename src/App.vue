@@ -79,7 +79,7 @@ export default {
 @import "~bootstrap";
 @import "@/assets/style/variables";
 body {
-  background-color: #141414;
+  background-color: #2c2c2c;
   height: 100vh;
 }
 #app {

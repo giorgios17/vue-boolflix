@@ -56,7 +56,7 @@ export default {
   .card-gs {
     width: 342px;
     height: 500px;
-    margin: 60px 10px;
+    margin: 10px;
     cursor: pointer;
     position: relative;
     background-color: black;

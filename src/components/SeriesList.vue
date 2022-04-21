@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="container-fluid mt-5">
-      <h1>Serie TV: {{ seriesList.length }}</h1>
+      <h1 v-show="seriesList.length > 0">
+        Serie TV trovate: {{ seriesList.length }}
+      </h1>
       <div class="tv-container">
         <div class="card-gs" v-for="(tv, index) in seriesList" :key="index">
           <img :src="imgUrl + tv.poster_path" :alt="tv.name" />

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container-fluid">
-      <h1>Film: {{ filmList.length }}</h1>
+      <h1 v-show="filmList.length > 0">Film trovati: {{ filmList.length }}</h1>
       <div class="film-container">
         <div class="card-gs" v-for="(film, index) in filmList" :key="index">
           <img :src="imgUrl + film.poster_path" :alt="film.title" />

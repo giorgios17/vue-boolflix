@@ -5,7 +5,7 @@
     @mouseleave="showImg = false"
   >
     <div v-if="!showImg">
-      <img :src="img" :alt="title" />
+      <img class="poster" :src="img" :alt="title" />
     </div>
     <div v-else class="p-3 mt-5">
       <h4><span class="fw-bold"> Titolo:</span> {{ title }}</h4>
@@ -14,9 +14,15 @@
         {{ originalTitle }}
       </p>
       <div v-if="language !== 'en'">
-        <country-flag v-if="language !== en" :country="language" size="small" />
+        <country-flag
+          v-if="language !== 'en'"
+          :country="language"
+          size="small"
+        />
       </div>
-      <div v-else>EN</div>
+      <div v-else>
+        <img id="usa" src="../assets/icons8-usa-32.png" alt="" />
+      </div>
       <p>
         <span class="fw-bold"> Voto:</span>
         {{ voteOneToFive(vote)
@@ -65,7 +71,6 @@ export default {
   },
   created() {
     this.voteCount = Math.ceil(this.vote / 2);
-    console.log("votecount", this.voteCount);
   },
 };
 </script>
@@ -78,7 +83,11 @@ export default {
   cursor: pointer;
   position: relative;
   background-color: black;
-  img {
+  #usa {
+    width: 16px;
+    height: 16px;
+  }
+  .poster {
     width: 100%;
     height: 100%;
     position: absolute;

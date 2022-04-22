@@ -35,7 +35,6 @@ export default {
 .film-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
   font-size: 12px;
 }
 </style>

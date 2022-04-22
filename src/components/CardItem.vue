@@ -80,6 +80,7 @@ export default {
   width: 342px;
   height: 500px;
   margin: 10px;
+  border-radius: 5px;
   cursor: pointer;
   position: relative;
   background-color: black;
@@ -93,6 +94,7 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
+    border-radius: 5px;
   }
   h4 {
     font-size: 16px;

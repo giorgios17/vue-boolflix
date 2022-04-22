@@ -28,11 +28,6 @@ export default {
     filmList: Array,
     imgUrl: String,
   },
-  data() {
-    return {
-      infoFilm: false,
-    };
-  },
 };
 </script>
 

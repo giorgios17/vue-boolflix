@@ -1,6 +1,12 @@
 <template>
-  <div class="card-gs">
-    <img :src="Img" :alt="Title" />
+  <div
+    class="card-gs"
+    @mouseenter="showImg = true"
+    @mouseleave="showImg = false"
+  >
+    <div v-if="!showImg">
+      <img :src="Img" :alt="Title" />
+    </div>
     <div class="p-3 mt-5">
       <h4><span class="fw-bold"> Titolo:</span> {{ Title }}</h4>
       <p v-show="Title !== OriginalTitle">
@@ -34,6 +40,11 @@ export default {
       return vote;
     },
   },
+  data() {
+    return {
+      showImg: false,
+    };
+  },
 };
 </script>
 
@@ -52,9 +63,9 @@ export default {
     top: 0;
     left: 0;
     z-index: 5;
-    &:hover {
-      display: none;
-    }
+    // &:hover {
+    //   display: none;
+    // }
   }
   h4 {
     font-size: 16px;

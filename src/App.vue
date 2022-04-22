@@ -35,9 +35,7 @@ export default {
       axios
         .get(this.apiUrl + "movie", { params })
         .then(({ data }) => {
-          console.log(data);
           this.films = data.results;
-          console.log("films array", this.films);
           return this.films;
         })
         .catch((error) => {
@@ -54,9 +52,7 @@ export default {
       axios
         .get(this.apiUrl + "tv", { params })
         .then(({ data }) => {
-          console.log(data);
           this.series = data.results;
-          console.log("series array", this.series);
           return this.series;
         })
         .catch((error) => {

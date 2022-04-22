@@ -17,7 +17,6 @@
             </li>
           </ul>
         </div>
-
         <div>
           <font-awesome-icon icon="fas fa-search" />
           <input

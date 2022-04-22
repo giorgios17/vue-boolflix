@@ -28,14 +28,14 @@
         {{ voteOneToFive(vote)
         }}<font-awesome-icon
           icon="fas fa-star"
-          v-for="fullStar in voteCount"
-          :key="fullStar"
+          v-for="(fullStar, index) in voteCount"
+          :key="'fullStar' + index"
           class="yellow"
         />
         <font-awesome-icon
           icon="far fa-star"
-          v-for="starEmpty in maxVote - voteCount"
-          :key="starEmpty"
+          v-for="(starEmpty, index) in maxVote - voteEmpty"
+          :key="'starEmpty' + index"
         />
       </p>
       <p v-show="overview.length > 0">
@@ -67,11 +67,13 @@ export default {
     return {
       showImg: false,
       voteCount: 0,
+      voteEmpty: 0,
       maxVote: 5,
     };
   },
   created() {
     this.voteCount = Math.ceil(this.vote / 2);
+    this.voteEmpty = Math.ceil(this.vote / 2);
   },
 };
 </script>

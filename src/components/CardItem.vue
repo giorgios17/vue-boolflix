@@ -5,20 +5,20 @@
     @mouseleave="showImg = false"
   >
     <div v-if="!showImg">
-      <img :src="Img" :alt="Title" />
+      <img :src="img" :alt="title" />
     </div>
-    <div class="p-3 mt-5">
-      <h4><span class="fw-bold"> Titolo:</span> {{ Title }}</h4>
-      <p v-show="Title !== OriginalTitle">
+    <div v-else class="p-3 mt-5">
+      <h4><span class="fw-bold"> Titolo:</span> {{ title }}</h4>
+      <p v-show="title !== originalTitle">
         <span class="fw-bold"> Titolo originale:</span>
-        {{ OriginalTitle }}
+        {{ originalTitle }}
       </p>
-      <country-flag :country="Language" size="small" />
+      <country-flag :country="language" size="small" />
       <p>
         <span class="fw-bold"> Voto:</span>
-        {{ voteOneToFive(Vote) }}
+        {{ voteOneToFive(vote) }}
       </p>
-      <p><span class="fw-bold"> Overview:</span> {{ Overview }}</p>
+      <p><span class="fw-bold"> Overview:</span> {{ overview }}</p>
     </div>
   </div>
 </template>
@@ -27,12 +27,12 @@
 export default {
   name: "CardItem",
   props: {
-    Img: String,
-    Title: String,
-    OriginalTitle: String,
-    Language: String,
-    Vote: Number,
-    Overview: String,
+    img: String,
+    title: String,
+    originalTitle: String,
+    language: String,
+    vote: Number,
+    overview: String,
   },
   methods: {
     voteOneToFive(n) {
@@ -43,6 +43,7 @@ export default {
   data() {
     return {
       showImg: false,
+      voteCount: 0,
     };
   },
 };
@@ -62,10 +63,6 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 5;
-    // &:hover {
-    //   display: none;
-    // }
   }
   h4 {
     font-size: 16px;

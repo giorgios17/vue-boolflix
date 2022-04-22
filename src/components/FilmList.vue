@@ -5,12 +5,12 @@
       <CardItem
         v-for="(film, index) in filmList"
         :key="index"
-        :Img="imgUrl + film.poster_path"
-        :Title="film.title"
-        :OriginalTitle="film.originale_title"
-        :Language="film.original_language"
-        :Vote="film.vote_average"
-        :Overview="film.overview"
+        :img="imgUrl + film.poster_path"
+        :title="film.title"
+        :originalTitle="film.original_title"
+        :language="film.original_language"
+        :vote="film.vote_average"
+        :overview="film.overview"
       />
     </div>
   </div>

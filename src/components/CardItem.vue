@@ -13,7 +13,10 @@
         <span class="fw-bold"> Titolo originale:</span>
         {{ originalTitle }}
       </p>
-      <country-flag :country="language" size="small" />
+      <div v-if="language !== 'en'">
+        <country-flag v-if="language !== en" :country="language" size="small" />
+      </div>
+      <div v-else>EN</div>
       <p>
         <span class="fw-bold"> Voto:</span>
         {{ voteOneToFive(vote)
@@ -28,7 +31,10 @@
           :key="index"
         />
       </p>
-      <p><span class="fw-bold"> Overview:</span> {{ overview }}</p>
+      <p v-show="overview.length > 0">
+        <span class="fw-bold"> Overview:</span>
+        {{ overview }}
+      </p>
     </div>
   </div>
 </template>

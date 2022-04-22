@@ -28,13 +28,14 @@
         {{ voteOneToFive(vote)
         }}<font-awesome-icon
           icon="fas fa-star"
-          v-for="(vote, index) in voteCount"
-          :key="index"
+          v-for="fullStar in voteCount"
+          :key="fullStar"
+          class="yellow"
         />
         <font-awesome-icon
           icon="far fa-star"
-          v-for="(star, index) in maxVote - voteCount"
-          :key="index"
+          v-for="starEmpty in maxVote - voteCount"
+          :key="starEmpty"
         />
       </p>
       <p v-show="overview.length > 0">
@@ -84,6 +85,9 @@ export default {
   cursor: pointer;
   position: relative;
   background-color: black;
+  .yellow {
+    color: yellow;
+  }
   #usa {
     width: 16px;
     height: 16px;

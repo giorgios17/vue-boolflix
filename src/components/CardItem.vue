@@ -34,7 +34,7 @@
         />
         <font-awesome-icon
           icon="far fa-star"
-          v-for="(starEmpty, index) in maxVote - voteEmpty"
+          v-for="(starEmpty, index) in maxVote - voteCount"
           :key="'starEmpty' + index"
         />
       </p>
@@ -58,6 +58,7 @@ export default {
     overview: String,
   },
   methods: {
+    //TRASFORMO IL VOTO DECIMALE IN UN VOTO DA 0 A 5
     voteOneToFive(n) {
       const vote = Math.ceil(n / 2);
       return vote;
@@ -67,13 +68,12 @@ export default {
     return {
       showImg: false,
       voteCount: 0,
-      voteEmpty: 0,
       maxVote: 5,
     };
   },
   created() {
+    //VALORIZZO VOTECOUNT CON IL VOTO DEL FILM/SERIE TV
     this.voteCount = Math.ceil(this.vote / 2);
-    this.voteEmpty = Math.ceil(this.vote / 2);
   },
 };
 </script>

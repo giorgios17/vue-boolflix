@@ -16,7 +16,17 @@
       <country-flag :country="language" size="small" />
       <p>
         <span class="fw-bold"> Voto:</span>
-        {{ voteOneToFive(vote) }}
+        {{ voteOneToFive(vote)
+        }}<font-awesome-icon
+          icon="fas fa-star"
+          v-for="(vote, index) in voteCount"
+          :key="index"
+        />
+        <font-awesome-icon
+          icon="far fa-star"
+          v-for="(star, index) in maxVote - voteCount"
+          :key="index"
+        />
       </p>
       <p><span class="fw-bold"> Overview:</span> {{ overview }}</p>
     </div>
@@ -44,7 +54,12 @@ export default {
     return {
       showImg: false,
       voteCount: 0,
+      maxVote: 5,
     };
+  },
+  created() {
+    this.voteCount = Math.ceil(this.vote / 2);
+    console.log("votecount", this.voteCount);
   },
 };
 </script>
